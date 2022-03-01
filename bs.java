@@ -7,14 +7,16 @@ public class bs {
 		int max = array.length;
 		int min = 0;
 		int mid = (max - min)/2 + min;
-		
+		if (array.length == 0) {
+			return -1;
+		}
 		while (array[mid] != target) {
 			mid = (max - min)/2 + min;
-			if (max < min) {
-				return -1;
-			}
 			if (array[mid] == target) {
 				return mid;
+			}
+			if (max <= min) {
+				return -1;
 			}
 			if (array[mid] > target) {
 				max = mid;
